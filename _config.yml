@@ -1,0 +1,31 @@
+# Welcome to Jekyll!
+# #
+# # This config file is meant for settings that affect your whole blog, values
+# # which you are expected to set up once and rarely need to edit after that.
+# # For technical reasons, this file is *NOT* reloaded automatically when you use
+# # 'jekyll serve'. If you change this file, please restart the server process.
+#
+# # Site settings
+title:
+  en: Iñaki Respaldiza
+  es: Iñaki Respaldiza
+email: info@irespaldiza.com
+description:
+  en: Iñaki Respaldiza WebSite
+  es: Pagina personal de Iñaki Respaldiza
+  index:
+  en:
+  es: indice.html
+feed:
+  en: /feed.xml
+  es: /flujo.xml
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: irespaldiza
+github_username: irespaldiza 
+linkedin_username: irespaldiza
+wordpress_username: irespaldiza
+facebook_username: irespaldiza 
+flicker_username: cubozoo 
+# Build settings
+markdown: kramdown
