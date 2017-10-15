@@ -12,8 +12,8 @@ lang: en
 
 ### Professional Experience
 * 02/2017 - Present **Docker Community Leader and Docker Sevilla Organiser** *Docker Community*
-01/2017 - Present **Event Organiser** *Hacking Sevilla*
-03/2017 - Present **Teacher** *Quantika14 Academy*
+* 01/2017 - Present **Event Organiser** *Hacking Sevilla*
+* 03/2017 - Present **Teacher** *Quantika14 Academy*
 > Linux Security and Hardenig , Secure Application Development, Docker,WordPress Security
 * 03/2016 - Present **Teacher** *Cámara de Comercio de Sevilla*
 > WordPress, Ecommerce.
