@@ -9,6 +9,7 @@ lang: en
 * 09/2016 **Bitnami Bootcamp: Cloud Computing System Administration** *BitRocks SL / Bitnami*
 * 03/2005 - 05/2005 **Técnicas de análisis cromosómicos y ácidos nucleicos**  *Junta de Andalucía*
 * Studing **University Degree in Biology** *Universidad de Sevilla*  
+
 ### Professional Experience
 * 02/2017 - Present **Docker Community Leader and Docker Sevilla Organiser** *Docker Community*
 01/2017 - Present **Event Organiser** *Hacking Sevilla*
@@ -35,5 +36,6 @@ lang: en
 > Linux for Children
 * 04/2005 - 07/2006 **Customer Support** *Ikea*
 * 06/2004 - 08/2004 **Sales Agent** *Sitel Trace Force*  
+
 ### Publications
 * **Yeast Genetic Analysis Reveals the Involvement of Chromatin Reassembly Factors in Repressing HIV-1 Basal Transcription.** *PLoS Genet. 2009; 5:e1000339.*
