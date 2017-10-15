@@ -26,13 +26,13 @@ lang: en
 * 09/2012 - Present **Photographer** *Getty Image*
 * 10/2015 - 12/2015 **SysAdmin** *MyTinySecrets Limited*
 * 01/2015 - 11/2016 **Co-Organiser** *WordCamp Europe 2015 and WordCamp Sevilla 2016*
-12/2007 - 01/2008 **Shop Assistant** *Fnac*
+* 12/2007 - 01/2008 **Shop Assistant** *Fnac*
 > Computer
 * 03/2007 - 06/2007 **Shop Assistant** *Fnac*
 > Photography
 * 07/2006 - 03/2007 **Shop Assitant** *Ikea*
 > Living Room
-10/2005 - 06/2006 **Teacher** *Asociación Animasoc*
+* 10/2005 - 06/2006 **Teacher** *Asociación Animasoc*
 > Linux for Children
 * 04/2005 - 07/2006 **Customer Support** *Ikea*
 * 06/2004 - 08/2004 **Sales Agent** *Sitel Trace Force*  
