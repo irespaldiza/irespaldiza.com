@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Curriculum Vitae
 permalink: /cv/
 ref: cv 
@@ -9,7 +9,7 @@ lang: es
 * 09/2016 **Bitnami Bootcamp: Administración de Sistemas de Cloud Computing** *BitRocks SL / Bitnami*
 * 2006 - 2010 **Alumno interno** *Departamento de Genética de la Universidad de Sevilla*
 * 03/2005 - 05/2005 **Técnicas de análisis cromosómicos y ácidos nucleicos** (135 horas) *Junta de Andalucía*
-* Cursando **Grado en Biología** *Universidad de Sevilla*
+* Cursando **Grado en Biología** *Universidad de Sevilla*  
 
 ### Experiencia Laboral
 * 02/2017 - **Docker Community Leader y Coordinador** de *Docker Sevilla*
@@ -36,7 +36,7 @@ WordPress, Comercio Electrónico.
 * 10/2005 - 06/2006 **Docente** *Asociación Animasoc*
 > Linux para niños
 * 04/2005 - 07/2006 **Atención al cliente y cajas** *Ikea*
-* 06/2004 - 08/2004 **Agente de ventas** *Sitel Trace Force*
+* 06/2004 - 08/2004 **Agente de ventas** *Sitel Trace Forcei*  
 
 ### Publicaciones
 * **Yeast Genetic Analysis Reveals the Involvement of Chromatin Reassembly Factors in Repressing HIV-1 Basal Transcription.** *PLoS Genet. 2009; 5:e1000339.*
