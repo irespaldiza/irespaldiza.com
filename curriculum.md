@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Curriculum Vitae
-permalink: /cv/
+permalink: /cves/
 ref: cv 
 lang: es
 ---
