@@ -6,19 +6,24 @@ ref: cv
 lang: es
 ---
 ### Formación
+* 05/2018 **Kubernetes Training.** *BitRocks SL / Bitnami*
 * 09/2016 **Bitnami Bootcamp: Administración de Sistemas de Cloud Computing** *BitRocks SL / Bitnami*
 * 2006 - 2010 **Alumno interno** *Departamento de Genética de la Universidad de Sevilla*
 * 03/2005 - 05/2005 **Técnicas de análisis cromosómicos y ácidos nucleicos** (135 horas) *Junta de Andalucía*
 * Cursando **Grado en Biología** *Universidad de Sevilla*  
 
 ### Experiencia Laboral
+* 06/2018 - Hoy **Docente *Grupo ID*
+> AWS, Docker, Kubernetes, Jenkins
+* 01/2018 **Docente *Ideo formación*
+> Seguridad durante el desarrollo, Hacking Ético...
 * 02/2017 - **Docker Community Leader y Coordinador** de *Docker Sevilla*
 * 01/2017 - Hoy **Organizador de Eventos** *Hacking Sevilla*
 * 03/2017 - Hoy **Docente** *Academia Quantika14* 
 > Fortificación servidores Linux, Seguridad en el desarrollo de aplicaciones, Docker, Seguridad en WordPress
 * 03/2016 - Hoy **Docente** *Cámara de Comercio de Sevilla*
 WordPress, Comercio Electrónico.
-* 06/2015 - Hoy **Docente** *Idit Formación*
+* 06/2015 - 12/2017 **Docente** *Idit Formación*
 > Apache Tomcat, Seguridad en el desarrollo de aplicaciones, Diseño grafico, Administración de Office365.
 * 01/2015- Hoy **Ponente en diversos eventos** *WordCamp Barcelona 2016, Hacking Sevilla, WordPress Sevilla, GesProSev, Docker Sevilla, etc...*
 * 10/2015 - Hoy **Colaborador** *Grupo Expresión Génica. Departamento de Genética. Universidad de Sevilla.*
