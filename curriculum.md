@@ -13,9 +13,9 @@ lang: es
 * Cursando **Grado en Biología** *Universidad de Sevilla*  
 
 ### Experiencia Laboral
-* 06/2018 - Hoy **Docente *Grupo ID*
+* 06/2018 - Hoy **Docente**  *Grupo ID*
 > AWS, Docker, Kubernetes, Jenkins
-* 01/2018 **Docente *Ideo formación*
+* 01/2018 **Docente** *Ideo formación*
 > Seguridad durante el desarrollo, Hacking Ético...
 * 02/2017 - **Docker Community Leader y Coordinador** de *Docker Sevilla*
 * 01/2017 - Hoy **Organizador de Eventos** *Hacking Sevilla*
