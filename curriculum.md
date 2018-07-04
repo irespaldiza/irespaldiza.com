@@ -22,7 +22,7 @@ lang: es
 * 03/2017-Hoy | **Docente** *Academia Quantika14* 
 > Fortificación servidores Linux, Seguridad en el desarrollo de aplicaciones, Docker, Seguridad en WordPress
 * 03/2016-Hoy | **Docente** *Cámara de Comercio de Sevilla*
-WordPress, Comercio Electrónico.
+> WordPress, Comercio Electrónico.
 * 06/2015-12/2017 | **Docente** *Idit Formación*
 > Apache Tomcat, Seguridad en el desarrollo de aplicaciones, Diseño grafico, Administración de Office365.
 * 01/2015-Hoy | **Ponente en diversos eventos** *WordCamp Barcelona 2016, Hacking Sevilla, WordPress Sevilla, GesProSev, Docker Sevilla, etc...*
