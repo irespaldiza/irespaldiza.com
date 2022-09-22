@@ -20,12 +20,11 @@ feed:
   en: /feed.xml
   es: /flujo.xml
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://irespaldiza.com" # the base hostname & protocol for your site
 twitter_username: irespaldiza
 github_username: irespaldiza 
 linkedin_username: irespaldiza
 wordpress_username: irespaldiza
 facebook_username: irespaldiza 
-flicker_username: cubozoo 
 # Build settings
 markdown: kramdown
