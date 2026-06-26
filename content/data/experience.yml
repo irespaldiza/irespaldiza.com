@@ -79,3 +79,12 @@ roles:
       - Designed and delivered professional technical training courses.
       - Prepared course materials, presentations and hands on labs.
       - Tailored training content to customer needs and participant experience.
+
+  - organization: University of Seville, Department of Genetics
+    title: Internal Student
+    dates: "TODO: Add dates"
+    location: Seville, Spain
+    description: Academic research experience during Biology studies in the Department of Genetics at the University of Seville.
+    responsibilities:
+      - "TODO: Add research group, lab name and concrete research responsibilities that can be shared publicly."
+      - "TODO: Add techniques, model organisms or experimental work only if relevant and accurate."

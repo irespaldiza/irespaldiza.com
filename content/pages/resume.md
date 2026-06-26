@@ -44,10 +44,6 @@ favicon: favicon.ico
 
 {{resume.community}}
 
-## Publications
-
-{{resume.publications}}
-
 ## Training
 
 {{resume.training}}
@@ -55,3 +51,7 @@ favicon: favicon.ico
 ## Languages
 
 {{skills.languages}}
+
+## Publications
+
+{{resume.publications}}
