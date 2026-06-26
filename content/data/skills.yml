@@ -1,0 +1,67 @@
+competencies:
+  Platform Engineering: Internal Developer Platforms, cloud platform design, Kubernetes platform architecture, platform reliability, infrastructure automation, technical strategy.
+  Cloud Architecture: AWS, Google Cloud, multi-cloud architecture, cloud networking, identity and access management, production cloud operations.
+  Infrastructure as Code: Terraform, Terraform Cloud, GitOps, Helm, reusable infrastructure standards.
+  Reliability and Operations: Site Reliability Engineering, observability, disaster recovery, monitoring, incident response, production operations.
+  Technical Leadership: architecture decision making, cross-functional collaboration, mentoring, engineering enablement, technical training.
+
+technologies:
+  Platform Engineering:
+    - Kubernetes
+    - Helm
+    - Docker
+  Cloud:
+    - AWS
+    - Google Cloud Platform
+    - Cloudflare
+  Infrastructure as Code:
+    - Terraform
+    - Terraform Cloud
+    - Ansible
+  GitOps and Delivery:
+    - Argo CD
+    - GitHub Actions
+    - CircleCI
+    - Jenkins
+    - Concourse
+  Observability:
+    - Prometheus
+    - Grafana
+    - Elasticsearch
+    - Kibana
+  Security:
+    - Secure application development
+    - Ethical hacking
+    - Linux server hardening
+  Programming and Automation:
+    - Go
+    - Python
+    - Bash
+  Networking and Security Foundations:
+    - DNS
+    - TLS
+    - PKI
+    - NGINX
+  Operating Systems:
+    - Linux
+    - Ubuntu
+    - Debian
+    - CentOS
+legacy_technologies:
+  - Apache Tomcat
+  - PHP
+  - WordPress
+  - Office365 administration
+
+focus:
+  - DevOps
+  - Kubernetes platforms
+  - AWS and Google Cloud
+  - Terraform and Infrastructure as Code
+  - GitOps and CI/CD
+  - Reliability, observability and operations
+  - Developer experience
+
+languages:
+  Spanish: Native
+  English: Professional working proficiency

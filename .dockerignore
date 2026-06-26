@@ -1,0 +1,10 @@
+.git
+.DS_Store
+.nojekyll
+build
+outputs
+talks
+index.html
+resume.html
+community.html
+private

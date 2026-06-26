@@ -1,0 +1,1 @@
+A community update covering the latest developments in the Docker ecosystem after a busy summer. The session reviewed recent changes, discussed their impact on the community, and encouraged networking and open discussion among attendees.

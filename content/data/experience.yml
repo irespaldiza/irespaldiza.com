@@ -1,0 +1,81 @@
+roles:
+  - organization: Okteto
+    title: Staff Platform Engineer
+    dates: December 2019 - Present
+    location: Remote / Seville, Spain
+    description: Lead the architecture and evolution of Okteto's cloud platform supporting both SaaS and Bring Your Own Cloud deployments across AWS and Google Cloud.
+    responsibilities:
+      - Define technical strategy for Platform Engineering and cloud platform evolution.
+      - Design scalable Kubernetes platform architectures for SaaS and Bring Your Own Cloud deployment models.
+      - Lead Infrastructure as Code initiatives using Terraform and Terraform Cloud.
+      - Design cloud identity, access management and secret management solutions.
+      - Define platform standards across AWS and Google Cloud.
+      - Drive platform reliability, automation and operational excellence.
+      - Coordinate technical initiatives across Engineering, Product, Customer Success and Security.
+      - Own engineering controls supporting SOC 2 compliance.
+
+  - organization: Paradigma Digital
+    title: DevOps Engineer
+    dates: September 2019 - December 2019
+    location: On Site / Pozuelo de Alarcón, Spain
+    description: Designed and automated cloud infrastructure, CI pipelines and deployment workflows while collaborating with engineering teams to improve reliability and operational efficiency.
+    responsibilities:
+      - Designed and automated cloud infrastructure.
+      - Built or improved CI pipelines and deployment workflows.
+      - Collaborated with engineering teams to improve reliability and operational efficiency.
+
+  - organization: BBVA, Senovo IT Contractor
+    title: DevOps Engineer
+    dates: September 2018 - September 2019
+    location: On Site / Tres Cantos, Spain
+    description: Worked on cloud infrastructure automation, Kubernetes adoption and CI/CD platforms for enterprise banking environments.
+    responsibilities:
+      - Worked on cloud infrastructure automation.
+      - Supported Kubernetes adoption.
+      - Worked on CI/CD platforms for enterprise banking environments.
+      - "TODO: Add specific security, reliability, governance or compliance responsibilities that can be shared publicly."
+    achievements:
+      - "TODO: Add cloud infrastructure automation achievement."
+      - "TODO: Add Kubernetes adoption or platform standardization achievement."
+      - "TODO: Add CI/CD platform achievement."
+      - "TODO: Add any security, governance, reliability or compliance context that can be shared publicly."
+
+  - organization: PixelatedHeart
+    title: DevOps Consultant
+    dates: January 2015 - September 2018
+    location: Remote / Sevilla, Spain
+    description: Member of a collective of independent technology professionals providing DevOps, cloud infrastructure and platform engineering consulting services.
+    extra_description: Worked directly with customers to design, automate and operate production infrastructure with a focus on reliability, scalability and operational efficiency.
+    responsibilities:
+      - Development in Python, PHP and Bash/shell scripting.
+      - Automation, deployment and systems administration.
+      - Docker adoption and container management.
+
+  - organization: Various Training Consultant
+    title: Technical Instructor
+    dates: October 2005 - Today
+    location: Seville, Spain
+    description: Delivered professional training on Linux, Cloud Computing, AWS, Docker, Kubernetes, DevOps, CI/CD, security and infrastructure automation for private companies, technical academies and public institutions.
+    extra_description: Organizations included Quantika14, Cámara de Comercio de Sevilla and IDIT Formación.
+    organizations:
+      - Grupo ID
+      - Ideo Formación
+      - Cámara de Comercio de Sevilla
+      - Asociación Animasoc
+      - IDIT Formación
+    topics:
+      - AWS
+      - Docker
+      - Kubernetes
+      - Jenkins
+      - Secure application development
+      - Ethical hacking
+      - Linux server hardening
+      - WordPress security
+      - Apache Tomcat
+      - Ecommerce
+      - Linux for children
+    responsibilities:
+      - Designed and delivered professional technical training courses.
+      - Prepared course materials, presentations and hands on labs.
+      - Tailored training content to customer needs and participant experience.
