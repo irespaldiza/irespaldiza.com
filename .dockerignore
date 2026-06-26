@@ -2,8 +2,10 @@
 .DS_Store
 .nojekyll
 build
+site
 outputs
 talks
+organizing
 index.html
 resume.html
 community.html

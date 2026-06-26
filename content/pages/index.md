@@ -1,6 +1,7 @@
 ---
 title: "{{profile.name}}"
 description: "{{profile.site_description}}"
+favicon: favicon.ico
 stylesheet: assets/css/site.css
 body_class: page
 ---

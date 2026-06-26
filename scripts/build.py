@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD_DIR = ROOT / "build"
+PUBLIC_DIR = ROOT / "site"
 
 PROFILE_PATH = ROOT / "content/data/profile.yml"
 SKILLS_PATH = ROOT / "content/data/skills.yml"
@@ -28,11 +29,16 @@ RENDERED_RESUME = BUILD_DIR / "resume.md"
 RENDERED_COMMUNITY = BUILD_DIR / "community.md"
 PUBLIC_RESUME = BUILD_DIR / "resume.public.md"
 
-INDEX_HTML = ROOT / "index.html"
-COMMUNITY_HTML = ROOT / "community.html"
-RESUME_HTML = ROOT / "resume.html"
-RESUME_PDF = ROOT / "outputs/pdf/resume.pdf"
-TALKS_DIR = ROOT / "talks"
+INDEX_HTML = PUBLIC_DIR / "index.html"
+COMMUNITY_HTML = PUBLIC_DIR / "community.html"
+RESUME_HTML = PUBLIC_DIR / "resume.html"
+RESUME_PDF = PUBLIC_DIR / "outputs/pdf/resume.pdf"
+TALKS_DIR = PUBLIC_DIR / "talks"
+ORGANIZING_DIR = PUBLIC_DIR / "organizing"
+ASSETS_DIR = PUBLIC_DIR / "assets"
+PUBLIC_FAVICON = PUBLIC_DIR / "favicon.ico"
+PUBLIC_CNAME = PUBLIC_DIR / "CNAME"
+PUBLIC_NOJEKYLL = PUBLIC_DIR / ".nojekyll"
 
 
 def read_simple_yaml(path):
@@ -262,6 +268,16 @@ def site_nav(prefix=""):
     )
 
 
+def prepare_public_site():
+    shutil.rmtree(PUBLIC_DIR, ignore_errors=True)
+    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+    shutil.copytree(ROOT / "assets", ASSETS_DIR, dirs_exist_ok=True)
+    shutil.copy2(ROOT / "favicon.ico", PUBLIC_FAVICON)
+    if (ROOT / "CNAME").exists():
+        shutil.copy2(ROOT / "CNAME", PUBLIC_CNAME)
+    PUBLIC_NOJEKYLL.write_text("", encoding="utf-8")
+
+
 def markdown_experience(roles):
     blocks = []
     for role in roles:
@@ -439,7 +455,7 @@ def page_context(context, prefix):
 def build_talk_pages(context):
     community = read_yaml_subset(COMMUNITY_PATH)
     talks = community.get("talks", [])
-    for path in ROOT.glob("talks/*.html"):
+    for path in TALKS_DIR.glob("*.html"):
         path.unlink(missing_ok=True)
 
     for talk in talks:
@@ -449,12 +465,13 @@ def build_talk_pages(context):
         talk_key = collection_slug(talk)
         source = BUILD_DIR / "talks" / f"{talk_key}.md"
         source.parent.mkdir(parents=True, exist_ok=True)
-        output = ROOT / "talks" / f"{talk_key}.html"
+        output = TALKS_DIR / f"{talk_key}.html"
         output.parent.mkdir(parents=True, exist_ok=True)
         body = [
             "---",
             f'title: "{talk.get("title", "Talk")}"',
             f'description: "{talk.get("title", "Talk")} at {talk.get("event", "Talk")}"',
+            'favicon: "../favicon.ico"',
             "stylesheet: ../assets/css/site.css",
             "body_class: page",
             "---",
@@ -497,7 +514,7 @@ def build_talk_pages(context):
 def build_organizing_pages(context):
     community = read_yaml_subset(COMMUNITY_PATH)
     organizing = community.get("organizing", [])
-    for path in ROOT.glob("organizing/*.html"):
+    for path in ORGANIZING_DIR.glob("*.html"):
         path.unlink(missing_ok=True)
 
     for item in organizing:
@@ -507,12 +524,13 @@ def build_organizing_pages(context):
         item_key = collection_slug(item)
         source = BUILD_DIR / "organizing" / f"{item_key}.md"
         source.parent.mkdir(parents=True, exist_ok=True)
-        output = ROOT / "organizing" / f"{item_key}.html"
+        output = ORGANIZING_DIR / f"{item_key}.html"
         output.parent.mkdir(parents=True, exist_ok=True)
         body = [
             "---",
             f'title: "{item.get("title", "Organizing")}"',
             f'description: "{item.get("title", "Organizing")}"',
+            'favicon: "../favicon.ico"',
             "stylesheet: ../assets/css/site.css",
             "body_class: page",
             "---",
@@ -708,6 +726,8 @@ def html_to_pdf(input_html, output_pdf):
 def build_site():
     context = build_context()
 
+    prepare_public_site()
+
     render_source(INDEX_SOURCE, RENDERED_INDEX, page_context(context, ""))
     render_source(RESUME_SOURCE, RENDERED_RESUME, page_context(context, ""))
     render_source(COMMUNITY_SOURCE, RENDERED_COMMUNITY, page_context(context, ""))
@@ -764,11 +784,16 @@ def build_pdf():
 
 def clean():
     shutil.rmtree(BUILD_DIR, ignore_errors=True)
+    shutil.rmtree(PUBLIC_DIR, ignore_errors=True)
     shutil.rmtree(TALKS_DIR, ignore_errors=True)
-    for path in (INDEX_HTML, RESUME_HTML, RESUME_PDF):
+    shutil.rmtree(ORGANIZING_DIR, ignore_errors=True)
+    for path in (ROOT / "index.html", ROOT / "resume.html", ROOT / "community.html"):
         path.unlink(missing_ok=True)
     for path in ROOT.glob("talks/*.html"):
         path.unlink(missing_ok=True)
+    for path in ROOT.glob("organizing/*.html"):
+        path.unlink(missing_ok=True)
+    (ROOT / "outputs/pdf/resume.pdf").unlink(missing_ok=True)
 
 
 def main():

@@ -16,7 +16,7 @@ This repository may be public. It must not include company-specific application 
 
 Private contact details, such as email or phone number, also belong outside version control in `private/profile.yml`.
 
-The website implementation is intentionally replaceable. GitHub Pages can serve this as static HTML, Jekyll, or another build pipeline later, as long as the Markdown content remains canonical.
+The website implementation is intentionally replaceable. GitHub Pages can serve the generated `site/` directory directly, or use another build pipeline later, as long as the Markdown content remains canonical.
 
 ## Structure
 
@@ -34,8 +34,7 @@ The website implementation is intentionally replaceable. GitHub Pages can serve 
 - `content/sections/` - reusable Markdown prose sections.
 - `outputs/` - public-safe generated or adapted deliverables.
 - `private/` - local-only company-specific resumes, cover letters and application notes. This directory is ignored by git.
-- `index.html` - generated GitHub Pages website entry point.
-- `resume.html` - generated public resume page for GitHub Pages.
+- `site/` - generated GitHub Pages website output directory.
 - `templates/` - Pandoc templates for generated HTML outputs.
 - `assets/css/` - website styling.
 - `scripts/build.py` - expands shared profile variables and reusable Markdown sections, creates public Markdown, and calls Pandoc/Chrome.
@@ -65,9 +64,12 @@ make docker-all
 
 Generated outputs:
 
-- `index.html` - public about page.
-- `resume.html` - public web resume.
-- `outputs/pdf/resume.pdf` - generated PDF resume.
+- `site/index.html` - public about page.
+- `site/resume.html` - public web resume.
+- `site/community.html` - public community page.
+- `site/talks/` - public talk pages.
+- `site/organizing/` - public organizing pages.
+- `site/outputs/pdf/resume.pdf` - generated PDF resume.
 
 The current PDF pipeline generates `resume.html` first and then prints it to PDF with headless Chrome, so the PDF uses the same CSS as the web resume.
 
@@ -92,9 +94,7 @@ Edit these files:
 
 Do not edit these generated files by hand:
 
-- `index.html`
-- `resume.html`
-- `outputs/pdf/resume.pdf`
+- `site/`
 - `build/`
 
 Pipeline files should only be edited when changing how generation works:

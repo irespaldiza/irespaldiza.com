@@ -1,6 +1,7 @@
 ---
 title: "Community - {{profile.name}}"
 description: Community talks and organizing history for {{profile.name}}.
+favicon: favicon.ico
 stylesheet: assets/css/site.css
 body_class: page
 ---

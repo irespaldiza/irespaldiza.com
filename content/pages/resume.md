@@ -1,6 +1,7 @@
 ---
 title: "{{profile.resume_title}}"
 description: Resume for {{profile.name}}, {{profile.title}}.
+favicon: favicon.ico
 ---
 
 {{site.nav}}
