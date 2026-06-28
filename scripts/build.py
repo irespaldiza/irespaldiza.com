@@ -885,6 +885,7 @@ def html_to_pdf(input_html, output_pdf):
                             process.kill()
                             process.wait()
                     tmp_pdf.replace(output_path)
+                    mark_pdf_links_new_window(output_path)
                     return
 
                 if process.poll() is not None:
@@ -910,6 +911,43 @@ def html_to_pdf(input_html, output_pdf):
         )
 
     raise RuntimeError(f"Failed to generate PDF: {output_path}")
+
+
+def mark_pdf_links_new_window(pdf_path):
+    from pypdf import PdfReader, PdfWriter
+    from pypdf.generic import BooleanObject, NameObject
+
+    reader = PdfReader(pdf_path)
+    changed = False
+
+    for page in reader.pages:
+        for annotation_ref in page.get("/Annots", []):
+            annotation = annotation_ref.get_object()
+            if annotation.get("/Subtype") != "/Link":
+                continue
+
+            action = annotation.get("/A")
+            if action is None:
+                continue
+            action = action.get_object()
+            if action.get("/S") != "/URI":
+                continue
+            uri = str(action.get("/URI", ""))
+            if not re.match(r"^(https?://|mailto:)", uri):
+                continue
+
+            action[NameObject("/NewWindow")] = BooleanObject(True)
+            changed = True
+
+    if not changed:
+        return
+
+    rewritten_path = pdf_path.with_name(f"{pdf_path.name}.links.{os.getpid()}")
+    writer = PdfWriter()
+    writer.clone_document_from_reader(reader)
+    with rewritten_path.open("wb") as output:
+        writer.write(output)
+    rewritten_path.replace(pdf_path)
 
 
 def build_site():
