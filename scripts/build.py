@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import json
 import os
 import re
 import shlex
@@ -15,6 +16,7 @@ BUILD_DIR = ROOT / "build"
 PUBLIC_DIR = ROOT / "site"
 
 PROFILE_PATH = ROOT / "content/data/profile.yml"
+PRIVATE_PROFILE_PATH = ROOT / "private/profile.yml"
 SKILLS_PATH = ROOT / "content/data/skills.yml"
 EXPERIENCE_PATH = ROOT / "content/data/experience.yml"
 COMMUNITY_PATH = ROOT / "content/data/community.yml"
@@ -28,6 +30,8 @@ RENDERED_INDEX = BUILD_DIR / "index.md"
 RENDERED_RESUME = BUILD_DIR / "resume.md"
 RENDERED_COMMUNITY = BUILD_DIR / "community.md"
 PUBLIC_RESUME = BUILD_DIR / "resume.public.md"
+PRIVATE_RESUME = BUILD_DIR / "resume.private.md"
+PRIVATE_RESUME_HTML = BUILD_DIR / "resume.private.html"
 
 INDEX_HTML = PUBLIC_DIR / "index.html"
 COMMUNITY_HTML = PUBLIC_DIR / "community.html"
@@ -314,7 +318,23 @@ def markdown_experience(roles):
     return "\n\n".join(blocks)
 
 
-def build_context():
+def contact_link(label, value):
+    value = str(value).strip()
+    display_labels = {
+        "email": "Email",
+        "github": "GitHub",
+        "linkedin": "LinkedIn",
+        "website": "Website",
+    }
+    display_label = display_labels.get(label, label.title())
+    if label == "email":
+        return f"[{display_label}](mailto:{value})"
+
+    href = value if re.match(r"^https?://", value) else f"https://{value}"
+    return f"[{display_label}]({href})"
+
+
+def build_context(include_private=False):
     profile = read_yaml_subset(PROFILE_PATH)
     skills = read_yaml_subset(SKILLS_PATH)
     experience = read_yaml_subset(EXPERIENCE_PATH)
@@ -322,12 +342,19 @@ def build_context():
     publications = read_yaml_subset(PUBLICATIONS_PATH)
     training = read_yaml_subset(TRAINING_PATH)
 
+    contact_parts = []
     public_contact = profile.get("public_contact", {})
-    contact_parts = [profile["location"]]
     for label, value in public_contact.items():
         if value and value != "TODO":
-            contact_parts.append(f"{label.title()}: {value}")
-    profile["public_contact_line"] = " | ".join(contact_parts)
+            contact_parts.append(contact_link(label, value))
+
+    if include_private and PRIVATE_PROFILE_PATH.exists():
+        private_profile = read_yaml_subset(PRIVATE_PROFILE_PATH)
+        email = private_profile.get("email")
+        if email and email != "TODO":
+            contact_parts.append(contact_link("email", email))
+
+    profile["contact_line"] = " | ".join(contact_parts)
 
     return {
         "profile": profile,
@@ -631,6 +658,142 @@ def run(command):
     subprocess.run(command, cwd=ROOT, check=True)
 
 
+def pandoc_attr(block):
+    if block.get("t") == "Header":
+        return block["c"][1]
+    if block.get("t") == "Div":
+        return block["c"][0]
+    return None
+
+
+def add_pandoc_class(block, class_name):
+    attr = pandoc_attr(block)
+    if attr is not None and class_name not in attr[1]:
+        attr[1].append(class_name)
+
+
+def pandoc_div(blocks, element_id="", classes=None):
+    return {
+        "t": "Div",
+        "c": [[element_id, classes or [], []], blocks],
+    }
+
+
+def wrap_experience_entries(blocks):
+    output = []
+    entry = None
+
+    for block in blocks:
+        if block.get("t") == "Header" and block["c"][0] == 3:
+            if entry:
+                output.append(pandoc_div(entry, classes=["experience-entry"]))
+            add_pandoc_class(block, "experience-organization")
+            entry = [block]
+        elif entry is not None:
+            entry.append(block)
+        else:
+            output.append(block)
+
+    if entry:
+        output.append(pandoc_div(entry, classes=["experience-entry"]))
+
+    return output
+
+
+def structure_resume_ast(document):
+    source = document["blocks"]
+    output = []
+    index = 0
+
+    while index < len(source):
+        block = source[index]
+
+        if block.get("t") == "Header" and block["c"][0] == 1:
+            add_pandoc_class(block, "resume-name")
+            header = [block]
+            index += 1
+            detail_index = 0
+
+            while index < len(source):
+                detail = source[index]
+                if detail.get("t") == "Header" and detail["c"][0] == 2:
+                    break
+                if detail.get("t") == "Para" and detail_index == 0:
+                    header.append(pandoc_div([detail], classes=["resume-title"]))
+                    detail_index += 1
+                elif detail.get("t") == "Para" and detail_index == 1:
+                    header.append(pandoc_div([detail], classes=["contact-links"]))
+                    detail_index += 1
+                else:
+                    header.append(detail)
+                index += 1
+
+            output.append(pandoc_div(header, classes=["resume-header"]))
+            continue
+
+        if block.get("t") == "Header" and block["c"][0] == 2:
+            section_id = block["c"][1][0]
+            add_pandoc_class(block, "resume-section-heading")
+            section = [block]
+            index += 1
+
+            while index < len(source):
+                child = source[index]
+                if child.get("t") == "Header" and child["c"][0] == 2:
+                    break
+                section.append(child)
+                index += 1
+
+            if section_id == "professional-experience":
+                section = wrap_experience_entries(section)
+
+            output.append(
+                pandoc_div(
+                    section,
+                    element_id=section_id,
+                    classes=["resume-section", f"resume-section-{section_id}"],
+                )
+            )
+            continue
+
+        output.append(block)
+        index += 1
+
+    document["blocks"] = output
+    return document
+
+
+def build_resume_html(source, output, css):
+    ast_path = BUILD_DIR / f"{output.stem}.ast.json"
+    run(
+        [
+            "pandoc",
+            str(source.relative_to(ROOT)),
+            "--to=json",
+            "--output",
+            str(ast_path.relative_to(ROOT)),
+        ]
+    )
+    document = json.loads(ast_path.read_text(encoding="utf-8"))
+    structured = structure_resume_ast(document)
+    ast_path.write_text(json.dumps(structured), encoding="utf-8")
+    run(
+        [
+            "pandoc",
+            str(ast_path.relative_to(ROOT)),
+            "--from=json",
+            "--standalone",
+            "--template",
+            "templates/resume.html",
+            "--css",
+            css,
+            "--wrap=none",
+            "--output",
+            str(output.relative_to(ROOT)),
+        ]
+    )
+
+
 def find_chrome():
     configured = os.environ.get("CHROME")
     if configured:
@@ -761,25 +924,24 @@ def build_site():
         ]
     )
 
-    run(
-        [
-            "pandoc",
-            str(PUBLIC_RESUME.relative_to(ROOT)),
-            "--standalone",
-            "--template",
-            "templates/resume.html",
-            "--css",
-            "assets/css/resume.css",
-            "--wrap=none",
-            "--output",
-            str(RESUME_HTML.relative_to(ROOT)),
-        ]
-    )
+    build_resume_html(PUBLIC_RESUME, RESUME_HTML, "assets/css/resume.css")
 
 
 def build_pdf():
     build_site()
-    html_to_pdf(RESUME_HTML, RESUME_PDF)
+    private_context = build_context(include_private=True)
+    render_source(
+        RESUME_SOURCE,
+        RENDERED_RESUME,
+        page_context(private_context, ""),
+    )
+    public_resume(RENDERED_RESUME, PRIVATE_RESUME)
+    build_resume_html(
+        PRIVATE_RESUME,
+        PRIVATE_RESUME_HTML,
+        "../assets/css/resume.css",
+    )
+    html_to_pdf(PRIVATE_RESUME_HTML, RESUME_PDF)
 
 
 def clean():
