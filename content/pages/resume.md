@@ -10,9 +10,7 @@ favicon: favicon.ico
 
 {{profile.title}}
 
-{{profile.public_contact_line}}
-
-{{resume.tagline}}
+{{profile.contact_line}}
 
 ## Professional Summary
 

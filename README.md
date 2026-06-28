@@ -71,6 +71,10 @@ Generated outputs:
 - `site/organizing/` - public organizing pages.
 - `site/outputs/pdf/resume.pdf` - generated PDF resume.
 
+The public HTML resume includes the contact links from `content/data/profile.yml`.
+When `private/profile.yml` contains an email address, the PDF also includes it; the
+public HTML resume does not.
+
 The current PDF pipeline generates `resume.html` first and then prints it to PDF with headless Chrome, so the PDF uses the same CSS as the web resume.
 
 ## Editable Files
@@ -80,7 +84,7 @@ Edit these files:
 - `content/pages/index.md` - public about page composition.
 - `content/pages/resume.md` - resume composition.
 - `content/data/profile.yml` - name, title, contact placeholders, shared title and tagline.
-- `private/profile.yml` - email, phone or other private contact details for private outputs.
+- `private/profile.yml` - email or other private contact details added only to private outputs such as the generated PDF.
 - `content/data/skills.yml` - skills, technologies and languages.
 - `content/data/experience.yml` - roles, dates, responsibilities and achievements.
 - `content/data/community.yml` - community entries.
@@ -110,7 +114,7 @@ Markdown sources can use shared profile fields:
 ```md
 {{profile.name}}
 {{profile.title}}
-{{resume.tagline}}
+{{profile.contact_line}}
 ```
 
 Markdown sources can include reusable sections:

@@ -105,8 +105,13 @@ hr {
   display: none;
 }
 
-.resume > p:nth-of-type(-n + 3) {
+.resume-header {
   color: var(--muted);
+}
+
+.resume-title p,
+.contact-links p {
+  margin-bottom: 0.65rem;
 }
 
 @media print {
@@ -184,15 +189,16 @@ hr {
     page-break-inside: avoid;
   }
 
-  .resume > p:nth-of-type(-n + 3) {
+  .resume-title p,
+  .contact-links p {
     margin-bottom: 0.8mm;
   }
 
-  .resume > p:nth-of-type(4) {
+  .contact-links p {
     margin-bottom: 2.2mm;
   }
 
-  .resume > h2:first-of-type {
+  .resume-section-professional-summary > .resume-section-heading {
     margin-top: 3mm;
   }
 
