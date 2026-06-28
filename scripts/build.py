@@ -679,6 +679,31 @@ def pandoc_div(blocks, element_id="", classes=None):
     }
 
 
+def decorate_document_links(node):
+    if isinstance(node, dict):
+        if node.get("t") == "Link":
+            attr, _, target = node["c"]
+            href = target[0]
+            if re.match(r"^(https?://|mailto:)", href) or href.endswith(".pdf"):
+                attributes = attr[2]
+                attributes[:] = [
+                    item
+                    for item in attributes
+                    if item[0] not in {"target", "rel"}
+                ]
+                attributes.extend(
+                    [
+                        ["target", "_blank"],
+                        ["rel", "noopener noreferrer"],
+                    ]
+                )
+        for value in node.values():
+            decorate_document_links(value)
+    elif isinstance(node, list):
+        for value in node:
+            decorate_document_links(value)
+
+
 def wrap_experience_entries(blocks):
     output = []
     entry = None
@@ -701,6 +726,7 @@ def wrap_experience_entries(blocks):
 
 
 def structure_resume_ast(document):
+    decorate_document_links(document)
     source = document["blocks"]
     output = []
     index = 0
