@@ -34,6 +34,10 @@ favicon: favicon.ico
 
 **Technical Leadership:** Architecture decision making, cross-functional collaboration, mentoring, engineering enablement, technical training.
 
+## Languages
+
+{{skills.languages}}
+
 ## Professional Experience
 
 {{resume.experience}}
@@ -45,10 +49,6 @@ favicon: favicon.ico
 ## Training
 
 {{resume.training}}
-
-## Languages
-
-{{skills.languages}}
 
 ## Publications
 
