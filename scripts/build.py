@@ -10,6 +10,7 @@ import tempfile
 import time
 import unicodedata
 from pathlib import Path
+from urllib.parse import urljoin
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD_DIR = ROOT / "build"
@@ -679,29 +680,30 @@ def pandoc_div(blocks, element_id="", classes=None):
     }
 
 
-def decorate_document_links(node):
+def decorate_document_links(node, base_url=None):
     if isinstance(node, dict):
         if node.get("t") == "Link":
             attr, _, target = node["c"]
             href = target[0]
-            if re.match(r"^(https?://|mailto:)", href) or href.endswith(".pdf"):
-                attributes = attr[2]
-                attributes[:] = [
-                    item
-                    for item in attributes
-                    if item[0] not in {"target", "rel"}
+            if base_url and not re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", href):
+                target[0] = urljoin(f"{base_url.rstrip('/')}/", href)
+            attributes = attr[2]
+            attributes[:] = [
+                item
+                for item in attributes
+                if item[0] not in {"target", "rel"}
+            ]
+            attributes.extend(
+                [
+                    ["target", "_blank"],
+                    ["rel", "noopener noreferrer"],
                 ]
-                attributes.extend(
-                    [
-                        ["target", "_blank"],
-                        ["rel", "noopener noreferrer"],
-                    ]
-                )
+            )
         for value in node.values():
-            decorate_document_links(value)
+            decorate_document_links(value, base_url)
     elif isinstance(node, list):
         for value in node:
-            decorate_document_links(value)
+            decorate_document_links(value, base_url)
 
 
 def wrap_experience_entries(blocks):
@@ -725,8 +727,8 @@ def wrap_experience_entries(blocks):
     return output
 
 
-def structure_resume_ast(document):
-    decorate_document_links(document)
+def structure_resume_ast(document, base_url=None):
+    decorate_document_links(document, base_url)
     source = document["blocks"]
     output = []
     index = 0
@@ -789,7 +791,7 @@ def structure_resume_ast(document):
     return document
 
 
-def build_resume_html(source, output, css):
+def build_resume_html(source, output, css, base_url=None):
     ast_path = BUILD_DIR / f"{output.stem}.ast.json"
     run(
         [
@@ -801,7 +803,7 @@ def build_resume_html(source, output, css):
         ]
     )
     document = json.loads(ast_path.read_text(encoding="utf-8"))
-    structured = structure_resume_ast(document)
+    structured = structure_resume_ast(document, base_url)
     ast_path.write_text(json.dumps(structured), encoding="utf-8")
     run(
         [
@@ -932,10 +934,6 @@ def mark_pdf_links_new_window(pdf_path):
             action = action.get_object()
             if action.get("/S") != "/URI":
                 continue
-            uri = str(action.get("/URI", ""))
-            if not re.match(r"^(https?://|mailto:)", uri):
-                continue
-
             action[NameObject("/NewWindow")] = BooleanObject(True)
             changed = True
 
@@ -1000,10 +998,17 @@ def build_pdf():
         page_context(private_context, ""),
     )
     public_resume(RENDERED_RESUME, PRIVATE_RESUME)
+    website = private_context["profile"].get("public_contact", {}).get("website", "")
+    pdf_base_url = (
+        website
+        if re.match(r"^https?://", website)
+        else f"https://{website}"
+    )
     build_resume_html(
         PRIVATE_RESUME,
         PRIVATE_RESUME_HTML,
         "../assets/css/resume.css",
+        pdf_base_url,
     )
     html_to_pdf(PRIVATE_RESUME_HTML, RESUME_PDF)
 

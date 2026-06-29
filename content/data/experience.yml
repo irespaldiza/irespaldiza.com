@@ -5,14 +5,11 @@ roles:
     location: Remote / Seville, Spain
     description: Lead the architecture and evolution of Okteto's cloud platform supporting both SaaS and Bring Your Own Cloud deployments across AWS and Google Cloud.
     responsibilities:
-      - Define technical strategy for Platform Engineering and cloud platform evolution.
-      - Design scalable Kubernetes platform architectures for SaaS and Bring Your Own Cloud deployment models.
-      - Lead Infrastructure as Code initiatives using Terraform and Terraform Cloud.
-      - Design cloud identity, access management and secret management solutions.
-      - Define platform standards across AWS and Google Cloud.
-      - Drive platform reliability, automation and operational excellence.
-      - Coordinate technical initiatives across Engineering, Product, Customer Success and Security.
-      - Own engineering controls supporting SOC 2 compliance.
+      - Define the technical strategy and architecture for Kubernetes platforms across SaaS and Bring Your Own Cloud deployment models.
+      - Lead Infrastructure as Code initiatives and establish reusable platform standards across AWS and Google Cloud.
+      - Design identity, access and secret management solutions, including engineering controls supporting SOC 2 compliance.
+      - Drive platform reliability, automation and operational improvements.
+      - Lead cross-functional technical initiatives involving Engineering, Product, Customer Success and Security.
 
   - organization: Paradigma Digital
     title: DevOps Engineer
@@ -20,25 +17,17 @@ roles:
     location: On Site / Pozuelo de Alarcón, Spain
     description: Designed and automated cloud infrastructure, CI pipelines and deployment workflows while collaborating with engineering teams to improve reliability and operational efficiency.
     responsibilities:
-      - Designed and automated cloud infrastructure.
-      - Built or improved CI pipelines and deployment workflows.
-      - Collaborated with engineering teams to improve reliability and operational efficiency.
+      - Improved infrastructure automation, CI pipelines and deployment workflows.
+      - Worked with engineering teams to strengthen delivery reliability and operational practices.
 
   - organization: BBVA, Senovo IT Contractor
     title: DevOps Engineer
     dates: September 2018 - September 2019
     location: On Site / Tres Cantos, Spain
-    description: Worked on cloud infrastructure automation, Kubernetes adoption and CI/CD platforms for enterprise banking environments.
+    description: Worked on the architecture and delivery of a containerized application platform for an enterprise banking environment.
     responsibilities:
-      - Worked on cloud infrastructure automation.
-      - Supported Kubernetes adoption.
-      - Worked on CI/CD platforms for enterprise banking environments.
-      - "TODO: Add specific security, reliability, governance or compliance responsibilities that can be shared publicly."
-    achievements:
-      - "TODO: Add cloud infrastructure automation achievement."
-      - "TODO: Add Kubernetes adoption or platform standardization achievement."
-      - "TODO: Add CI/CD platform achievement."
-      - "TODO: Add any security, governance, reliability or compliance context that can be shared publicly."
+      - Participated in the application architecture design and designed its network topology and containerization approach.
+      - Automated infrastructure, Kubernetes, middleware and application delivery using Terraform and Ansible.
 
   - organization: PixelatedHeart
     title: DevOps Consultant
@@ -47,9 +36,9 @@ roles:
     description: Member of a collective of independent technology professionals providing DevOps, cloud infrastructure and platform engineering consulting services.
     extra_description: Worked directly with customers to design, automate and operate production infrastructure with a focus on reliability, scalability and operational efficiency.
     responsibilities:
-      - Development in Python, PHP and Bash/shell scripting.
-      - Automation, deployment and systems administration.
-      - Docker adoption and container management.
+      - Designed and operated production infrastructure directly with customers.
+      - Automated deployments and systems operations across customer environments.
+      - Supported Docker adoption and the containerization of applications and services.
 
   - organization: Various Training Consultant
     title: Technical Instructor
@@ -76,15 +65,12 @@ roles:
       - Ecommerce
       - Linux for children
     responsibilities:
-      - Designed and delivered professional technical training courses.
-      - Prepared course materials, presentations and hands on labs.
-      - Tailored training content to customer needs and participant experience.
+      - Designed and delivered professional technical training with practical exercises and hands-on labs.
+      - Developed course materials adapted to customer needs and participant experience.
 
   - organization: University of Seville, Department of Genetics
     title: Internal Student
     dates: "TODO: Add dates"
     location: Seville, Spain
-    description: Academic research experience during Biology studies in the Department of Genetics at the University of Seville.
-    responsibilities:
-      - "TODO: Add research group, lab name and concrete research responsibilities that can be shared publicly."
-      - "TODO: Add techniques, model organisms or experimental work only if relevant and accurate."
+    description: Conducted laboratory research using molecular biology and genetics techniques, from experimental design through execution and analysis.
+    extra_description: Performed bioinformatics analysis of experimental and sequence data.

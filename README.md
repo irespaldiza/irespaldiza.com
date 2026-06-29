@@ -76,7 +76,8 @@ When `private/profile.yml` contains an email address, the PDF also includes it; 
 public HTML resume does not.
 
 The current PDF pipeline generates `resume.html` first and then prints it to PDF with headless Chrome, so the PDF uses the same CSS as the web resume.
-It then marks external PDF link actions with the `NewWindow` preference. PDF
+It resolves relative PDF links against the public website and marks every PDF
+link action with the `NewWindow` preference. PDF
 readers may still override that preference.
 
 ## Editable Files
