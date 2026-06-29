@@ -3,6 +3,7 @@
 .nojekyll
 build
 site
+docs
 outputs
 talks
 organizing

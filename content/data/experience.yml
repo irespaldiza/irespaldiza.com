@@ -3,12 +3,12 @@ roles:
     title: Staff Platform Engineer
     dates: December 2019 - Present
     location: Remote / Seville, Spain
-    description: Lead the architecture and evolution of Okteto's cloud platform supporting both SaaS and Bring Your Own Cloud deployments across AWS and Google Cloud.
+    description: Lead the architecture and evolution of Okteto's cloud platform supporting SaaS and Bring Your Own Cloud deployments across AWS and Google Cloud.
     responsibilities:
-      - Define the technical strategy and architecture for Kubernetes platforms across SaaS and Bring Your Own Cloud deployment models.
-      - Lead Infrastructure as Code initiatives and establish reusable platform standards across AWS and Google Cloud.
-      - Design identity, access and secret management solutions, including engineering controls supporting SOC 2 compliance.
-      - Drive platform reliability, automation and operational improvements.
+      - Define the technical strategy, deployment architecture and default configuration patterns for SaaS and Bring Your Own Cloud environments.
+      - Lead Infrastructure as Code practices so platform infrastructure and deployment workflows are repeatable, reviewable and maintainable.
+      - Own the engineering side of security and compliance controls, including identity, access and secret management work supporting SOC 2.
+      - Coordinate on-call practices and drive reliability, automation and operational improvements across the platform.
       - Lead cross-functional technical initiatives involving Engineering, Product, Customer Success and Security.
 
   - organization: Paradigma Digital
@@ -27,7 +27,7 @@ roles:
     description: Worked on the architecture and delivery of a containerized application platform for an enterprise banking environment.
     responsibilities:
       - Participated in the application architecture design and designed its network topology and containerization approach.
-      - Automated infrastructure, Kubernetes, middleware and application delivery using Terraform and Ansible.
+      - Automated infrastructure, Kubernetes, middleware and application delivery using Infrastructure as Code and configuration management practices.
 
   - organization: PixelatedHeart
     title: DevOps Consultant
@@ -70,7 +70,7 @@ roles:
 
   - organization: University of Seville, Department of Genetics
     title: Internal Student
-    dates: "TODO: Add dates"
+    dates: 2006 - 2010
     location: Seville, Spain
-    description: Conducted laboratory research using molecular biology and genetics techniques, from experimental design through execution and analysis.
+    description: Conducted molecular biology and genetics research, from experimental design to analysis.
     extra_description: Performed bioinformatics analysis of experimental and sequence data.

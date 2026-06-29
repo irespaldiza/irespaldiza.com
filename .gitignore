@@ -1,4 +1,6 @@
 .DS_Store
+__pycache__/
+*.pyc
 _site
 .sass-cache
 *.gem
@@ -8,4 +10,3 @@ outputs/cover-letters/
 outputs/applications/
 build/
 resume.txt
-

@@ -3,92 +3,121 @@ items:
   - Docker Community Leader.
   - Technical trainer and mentor.
 talks:
-  - id: 15
+  - id: 1
     title: Docker en el mundo real
     event: Fundamentos de Contenerización con Docker
     date: 04/22/2026
     event_url:
     slides_url: https://docs.google.com/presentation/d/1zCTycJWq0AUxMRsr5LDrFS_mI8NRty2GKLYUVFYI44Q/edit?usp=sharing
-  - id: 14
+  - id: 2
     title: Un proyecto para gobernarlos a todos
     event: HashiTalks España
     date: 15/01/2026
     video_url: https://www.youtube.com/live/mAZDNb5-i4M?t=5244s
-  - id: 13
+  - id: 3
     title: Creando entornos Okteto SaaS con dos manifiestos
     event: HashiTalks España
     date: 01/19/2023
     video_url: https://youtu.be/1HLBKwK4KSk?si=_x5VPtTPM5TdzfRS
-  - id: 12
-    title: Simplificando el Desarrollo de Aplicaciones Modernas con Terraform y Okteto
-    event: HashiTalks España
-    video_url: https://www.youtube.com/watch?v=vuRQiuJT0no&list=PL81sUbsFNc5a9a3tHKJXBqssaU4_nhGpG&index=6
-    event_url: http://community2.cncf.io/events/details/cncf-kcd-spain-presents-kcd-spain-2022/
-  - id: 11
+  - id: 4
     title: Dos minutos de silencio
     event: Kubernetes Community Days Spain
     date: 11/16/2022
-  - id: 10
+  - id: 5
+    title: Infraestructura como código y Kubernetes, entornos multicloud más allá de desarrollo/staging/producción
+    event: KroqueCon 2021
+    date: 10/21/2021
+  - id: 6
     title: Kubernetes como Plataforma de Desarrollo
     event: HackMadrid %27
     date: 06/30/2021
     event_url: https://www.meetup.com/es-ES/hackmadrid-27/events/271492674/?eventOrigin=group_events_list
     video_url: https://youtu.be/dNNgPfG-dC4?si=NV18rGquJt5Vv2IO
-  - id: 9
+  - id: 7
+    title: Mesa redonda: El estado de DevOps y Cloud Native en España
+    event: KroqueCon 2021
+    date: 2021
+  - id: 8
     title: Detecta cryptominado en tu infraestructura con Falco
     event: Kubernetes Community Days (KCD) Spain 2021
-  - id: 8
-    event: WordCamp para desarrolladores Sevilla
-    date: 2019
-    title: htaccess es el mal
-    video_url: https://wordpress.tv/2019/11/04/inaki-respaldiza-htaccess-es-el-mal/
-  - id: 7
+  - id: 9
+    title: DevOps: Infraestructura como Código con Terraform
+    event: BBVA Tech Meetups
+    date: 2020
+  - id: 10
     title: Gobernando Microservicios con Docker y Kubernetes
     event: OpenExpo Europe
     date: 06/20/2019
     event_url: https://openexpoeurope.com/es/session/meetup-gobernando-microservicios-con-docker-y-kubernetes/
-  - id: 6
-    title: What is docker, What's new
+  - id: 11
+    title: Paquetería en Kubernetes con Helm
+    event: "#TechParty2019"
+    date: 09/14/2019
+  - id: 12
+    event: WordCamp para desarrolladores Sevilla
+    date: 2019
+    title: htaccess es el mal
+    video_url: https://wordpress.tv/2019/11/04/inaki-respaldiza-htaccess-es-el-mal/
+  - id: 13
+    title: Taller práctico de Docker: De Cero a Contenedor
     event: Docker Sevilla
-  - id: 5
+    date: 2018
+  - id: 14
+    title: Mesa redonda: El futuro de WordPress y las tecnologías de contenedores
+    event: WordCamp Sevilla
+    date: 2017
+  - id: 15
+    title: Seguridad en Contenedores y Hacking Ético
+    event: Hacking Sevilla
+    date: 2017
+  - id: 16
     title: Docker Sevilla
     event: Docker Sevilla
     date: 2016
     event_url: ""
-    summary_md: ""
     video_url: ""
     slides_url: ""
-  - id: 4
+  - id: 17
     title: Experiencias gestionando proyectos colaborativos con Git
     event: GesProSev
     date: 2016
     event_url: "https://www.meetup.com/es-ES/gesprosev/events/237671941/"
-    summary_md: An Introduction to Using Git for Collaborative Project Management
     video_url: ""
     slides_url: ""
-  - id: 3
+  - id: 18
     title: WordPress Sevilla
     event: WordPress Sevilla
     date: 2016
     event_url: ""
-    summary_md: ""
     video_url: ""
     slides_url: ""
-  - id: 2
+  - id: 19
     title: Generar un centro de Testeo Web con Docker.
     event: Hacking Sevilla
     date: 2016
     event_url: "https://www.meetup.com/es-ES/hacking-sevillaqk14/events/243115425/?eventOrigin=group_events_list"
     video_url: ""
     slides_url: ""
-  - id: 1
+  - id: 20
     title: Free or not free that is the question
     event: WordCamp Barcelona
     date: 2016
     event_url: https://barcelona.wordcamp.org/2016/session/free-or-not-free-that-is-the-question/
-    summary_md: ""
     video_url:
     slides_url: ""
+  - id: 21
+    title: WordPress Sevilla Meetup
+    event: WordPress Sevilla
+    date: 03/26/2015
+    event_url: https://www.meetup.com/es-ES/wordpress-sevilla/events/220950357/?a=ra1_vl&_af_eid=220950357&_af=event
+  - id: 22
+    title: Simplificando el Desarrollo de Aplicaciones Modernas con Terraform y Okteto
+    event: HashiTalks España
+    video_url: https://www.youtube.com/watch?v=vuRQiuJT0no&list=PL81sUbsFNc5a9a3tHKJXBqssaU4_nhGpG&index=6
+    event_url: http://community2.cncf.io/events/details/cncf-kcd-spain-presents-kcd-spain-2022/
+  - id: 23
+    title: What is docker, What's new
+    event: Docker Sevilla
 
 organizing:
   - id: 101

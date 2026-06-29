@@ -1,10 +1,4 @@
 items:
-  - "TODO: Add the strongest measurable outcomes from recent roles."
-  - "TODO: Add examples of platform decisions, architecture ownership and cross-team influence."
-  - "TODO: Add current company scope, team scope, reporting line if relevant, and the business or engineering outcomes most associated with the current Staff Platform Engineer role."
-  - "TODO: Add 4-6 concrete achievements from Okteto, Paradigma Digital and BBVA."
-  - "TODO: Add managed Kubernetes platforms, networking, load balancing, identity, storage and platform APIs used."
-  - "TODO: Add CI/CD, GitOps, policy as code, configuration management and automation tooling."
-  - "TODO: Add CI/CD systems, internal developer platform tools, preview environments, deployment platforms and service catalog tools."
-  - "TODO: Add observability, incident response, SLOs, secrets management, vulnerability management and compliance tooling."
-  - "TODO: Decide whether legacy/application technologies belong in the main resume or only the source of truth."
+  - "TODO: Add one or two concrete platform outcomes if they can be stated without exposing confidential customer or operational details."
+  - "TODO: Decide whether the training section should include recent security, platform or architecture training, or remain intentionally short."
+  - "TODO: Add exact dates for talks that currently only have a year, where reliable dates are available."

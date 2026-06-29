@@ -57,8 +57,8 @@ focus:
   - DevOps
   - Kubernetes platforms
   - AWS and Google Cloud
-  - Terraform and Infrastructure as Code
-  - GitOps and CI/CD
+  - Infrastructure as Code and deployment automation
+  - Delivery workflows and CI/CD
   - Reliability, observability and operations
   - Developer experience
 

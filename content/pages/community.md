@@ -18,14 +18,6 @@ Organizing, talks and community work
 :::
 :::
 
-::: {.about}
-## Overview
-
-::: {.text}
-{{> content/sections/community-summary.md}}
-:::
-:::
-
 ::: {.community}
 ## Organizing
 

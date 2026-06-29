@@ -7,4 +7,4 @@ target_roles:
 positioning:
   - Platform engineer focused on designing and evolving cloud platforms, not only operating infrastructure.
   - Experience should emphasize platform architecture, Kubernetes, AWS, Google Cloud, Infrastructure as Code, developer platforms, reliability, security, scalability and cross-functional technical leadership.
-  - Strong positioning around multi-tenant Kubernetes platforms, Bring Your Own Cloud architectures, multi-cloud platforms across AWS and Google Cloud, Terraform, GitOps, observability, disaster recovery and production operations.
+  - Strong positioning around multi-tenant Kubernetes platforms, Bring Your Own Cloud architectures, multi-cloud platforms across AWS and Google Cloud, Infrastructure as Code, deployment automation, observability, disaster recovery and production operations.

@@ -16,7 +16,7 @@ This repository may be public. It must not include company-specific application 
 
 Private contact details, such as email or phone number, also belong outside version control in `private/profile.yml`.
 
-The website implementation is intentionally replaceable. GitHub Pages can serve the generated `site/` directory directly, or use another build pipeline later, as long as the Markdown content remains canonical.
+The website implementation is intentionally replaceable. GitHub Pages can serve the generated `docs/` directory directly, or use another build pipeline later, as long as the Markdown content remains canonical.
 
 ## Structure
 
@@ -34,15 +34,16 @@ The website implementation is intentionally replaceable. GitHub Pages can serve 
 - `content/sections/` - reusable Markdown prose sections.
 - `outputs/` - public-safe generated or adapted deliverables.
 - `private/` - local-only company-specific resumes, cover letters and application notes. This directory is ignored by git.
-- `site/` - generated GitHub Pages website output directory.
+- `docs/` - generated GitHub Pages website output directory.
 - `templates/` - Pandoc templates for generated HTML outputs.
 - `assets/css/` - website styling.
-- `scripts/build.py` - expands shared profile variables and reusable Markdown sections, creates public Markdown, and calls Pandoc/Chrome.
+- `scripts/build.py` - single executable entrypoint for the build.
+- `scripts/buildlib/` - build modules for content rendering, site generation, resume HTML and PDF output.
 - `Dockerfile` - containerized build environment for the same Python entrypoint.
 
 ## Build
 
-The build logic lives in `scripts/build.py`.
+The build entrypoint is `scripts/build.py`; implementation modules live in `scripts/buildlib/`.
 Docker is the default execution environment for `make all`, `make site`, `make pdf` and `make clean`.
 Local targets exist as `make local-site`, `make local-pdf`, `make local-all` and `make local-clean`.
 
@@ -64,12 +65,12 @@ make docker-all
 
 Generated outputs:
 
-- `site/index.html` - public about page.
-- `site/resume.html` - public web resume.
-- `site/community.html` - public community page.
-- `site/talks/` - public talk pages.
-- `site/organizing/` - public organizing pages.
-- `site/outputs/pdf/resume.pdf` - generated PDF resume.
+- `docs/index.html` - public about page.
+- `docs/resume.html` - public web resume.
+- `docs/community.html` - public community page.
+- `docs/talks/` - public talk pages.
+- `docs/organizing/` - public organizing pages.
+- `docs/outputs/pdf/resume.pdf` - generated PDF resume.
 
 The public HTML resume includes the contact links from `content/data/profile.yml`.
 When `private/profile.yml` contains an email address, the PDF also includes it; the
@@ -101,7 +102,7 @@ Edit these files:
 
 Do not edit these generated files by hand:
 
-- `site/`
+- `docs/`
 - `build/`
 
 Pipeline files should only be edited when changing how generation works:

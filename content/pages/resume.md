@@ -19,14 +19,13 @@ favicon: favicon.ico
 ## Highlights
 
 - Staff Platform Engineer with more than ten years of experience in cloud, infrastructure and platform engineering.
-- Platform architect for Kubernetes-based cloud infrastructure across AWS and Google Cloud.
-- Technical lead for platform engineering initiatives across engineering, product, customer success and security contexts.
+- Platform architect for Kubernetes-based SaaS and Bring Your Own Cloud environments across AWS and Google Cloud.
+- Engineering owner for infrastructure automation, platform defaults, reliability practices and security controls.
 - Speaker, trainer and active member of cloud native, Docker and WordPress technical communities.
-- TODO: Add 3-5 concrete achievements with measurable outcomes.
 
 ## Core Competencies
 
-**Platform Engineering:** Internal developer platforms, Kubernetes platform architecture, platform reliability, infrastructure automation.
+**Platform Engineering:** Internal developer platforms, Kubernetes architecture, platform reliability and automation.
 
 **Cloud Architecture:** AWS, Google Cloud, multi-cloud architecture, cloud networking, identity and access management.
 
@@ -42,7 +41,7 @@ favicon: favicon.ico
 
 {{resume.experience}}
 
-## Community
+## Community Organizing
 
 {{resume.community}}
 
