@@ -30,15 +30,17 @@ a {
 }
 
 .page {
-  width: min(980px, 100%);
+  /* width: min(980px, 100%); */
   margin: 0 auto;
   padding: clamp(1.25rem, 4vw, 4rem);
 }
 
 .header {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  /* align-items: flex-end;
+  justify-content: space-between; */
   gap: 2rem;
   padding-bottom: clamp(2rem, 5vw, 4rem);
   border-bottom: 1px solid var(--line);
@@ -60,7 +62,7 @@ h1 {
 .header p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
 }
 
 .site-nav p,
@@ -80,28 +82,41 @@ h1 {
 .site-nav a,
 .links a {
   font-weight: 700;
+  transition: opacity 0.2s ease;
 }
+
+.links a:hover{
+  opacity: 0.7;
+}
+
 
 .about,
 .details {
-  display: grid;
+  /* display: grid;
   grid-template-columns: minmax(140px, 0.28fr) minmax(0, 1fr);
+  */
   gap: clamp(1.5rem, 5vw, 4rem);
-  padding-block: clamp(2rem, 5vw, 4rem);
+  padding-block: clamp(2rem, 5vw, 4rem); 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   border-bottom: 1px solid var(--line);
+  text-align: justify;
 }
 
 h2 {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .text {
-  max-width: 720px;
+  /* max-width: 720px; */
+  text-align: justify;
 }
 
 .text p {
@@ -116,6 +131,8 @@ h2 {
 .details ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  justify-items: start;
   gap: 0.7rem 1.5rem;
   max-width: 720px;
   margin: 0;
