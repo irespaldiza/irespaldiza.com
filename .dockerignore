@@ -2,7 +2,6 @@
 .DS_Store
 .nojekyll
 build
-site
 docs
 outputs
 talks
