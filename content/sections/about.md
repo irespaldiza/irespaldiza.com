@@ -1,5 +1,9 @@
-I am a Staff Platform Engineer working with Kubernetes, cloud infrastructure, Infrastructure as Code and developer platforms.
+I focus on the architecture and evolution of Kubernetes-based cloud platforms: how they are deployed, configured, secured, operated and exposed to the teams that build on top of them.
 
-Most of my recent work has been around cloud platforms on AWS and Google Cloud, Infrastructure as Code, deployment automation, observability, reliability and production operations. I tend to work close to the boundary between architecture and day-to-day engineering: designing the platform, improving how it is operated and making it easier for other teams to use.
+My recent work has been around SaaS and Bring Your Own Cloud environments across AWS and Google Cloud. That includes infrastructure automation, platform defaults, security controls, reliability practices and the operational routines needed to keep those systems understandable over time.
 
-Before focusing on platform engineering, I worked in DevOps consulting and technical training. I have taught Linux, AWS, Docker, Kubernetes, CI/CD, security and automation, and I have been involved in technical communities around Docker, WordPress and cloud native topics.
+I usually work where architectural decisions meet day-to-day operations. I care about making infrastructure repeatable, but also about making the reasoning behind it clear: why defaults exist, how environments should be provisioned, where responsibilities sit, and what trade-offs teams need to understand before depending on a platform.
+
+Earlier in my career I worked across DevOps consulting, technical training and community organizing. That background still shapes how I approach platform engineering. A platform is not only a technical system; it is also documentation, defaults, support paths, operational habits and shared language between teams.
+
+I tend to be most useful in roles where infrastructure, product engineering, reliability and security overlap, especially when the work involves turning scattered operational knowledge into a platform that other teams can use with confidence.
